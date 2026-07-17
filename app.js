@@ -212,3 +212,23 @@ if(jenis=="AKTIVITI"){
 
 
 loadMasterData();
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", function(){
+
+        navigator.serviceWorker.register("service-worker.js")
+        .then(function(){
+
+            console.log("e-BIT Service Worker aktif");
+
+        })
+        .catch(function(error){
+
+            console.log("Service Worker gagal:", error);
+
+        });
+
+    });
+
+}
